@@ -32,6 +32,10 @@ module GoodJob
       if search_query.present?
         query = if query_is_uuid_and_job_exists?(search_query)
                   query.where(active_job_id: search_query)
+                elsif search_query == "unscoped"
+                  query.where("serialized_params @> ?", { tenant_unscoped: true }.to_json)
+                elsif search_query.match? "/Account/"
+                  query.where("serialized_params @> ?", { current_tenant: search_query }.to_json)
                 else
                   query.search_text(search_query)
                 end

@@ -768,6 +768,15 @@ module GoodJob
       state
     end
 
+    def tenant_data
+      if serialized_params["current_tenant"]
+        serialized_params["current_tenant"]
+      elsif serialized_params["tenant_unscoped"]
+        "unscoped"
+      else
+      end
+    end
+
     private
 
     def _discard_job(message)

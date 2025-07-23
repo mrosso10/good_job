@@ -34,6 +34,7 @@
 
           </div>
           <div class="d-none d-lg-block col-lg-1 text-lg-center"><%= t "good_job.models.job.queue" %></div>
+          <div class="d-none d-lg-block col-lg-1 text-lg-center"><%= t "good_job.models.job.tenant" %></div>
           <div class="d-none d-lg-block col-lg-1 text-lg-end"><%= t "good_job.models.job.priority" %></div>
           <div class="d-none d-lg-block col-lg-1 text-lg-end"><%= t "good_job.models.job.labels" %></div>
           <div class="d-none d-lg-block col-lg-1 text-lg-end"><%= t "good_job.models.job.attempts" %></div>
@@ -78,6 +79,10 @@
               <div class="col-4 col-lg-1 text-lg-center">
                 <div class="d-lg-none small text-muted mt-1"><%= t "good_job.models.job.queue" %></div>
                 <span class="badge bg-primary font-monospace"><%= job.queue_name %></span>
+              </div>
+              <div class="col-4 col-lg-1 text-lg-center">
+                <div class="d-lg-none small text-muted mt-1"><%= t "good_job.models.job.tenant" %></div>
+                <span class=""><%= job.tenant_data %></span>
               </div>
               <div class="col-4 col-lg-1 text-lg-end">
                 <div class="d-lg-none small text-muted mt-1"><%= t "good_job.models.job.priority" %></div>
