@@ -768,6 +768,13 @@ module GoodJob
       state
     end
 
+    def user_data
+      if serialized_params["user_id"]
+        serialized_params["user_id"]
+      else
+      end
+    end
+
     def tenant_data
       if serialized_params["current_tenant"]
         serialized_params["current_tenant"]
